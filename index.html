@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> 
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans" />
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+<script>
+	function checkCelebrationType(){
+		var celebrationtype = document.querySelector('input[name = "celebrationtype"]:checked').value;
+		if(celebrationtype === 'Other'){
+			var otherVal = document.querySelector('input[name = "otherval"]').value;
+			alert('Other value can not remain blank');
+			document.getElementById("otherval").focus();
+			return false;
+		}
+	}
+
+</script>
+</head>
+<body>
+<form role="form" class="form-horizontal" method="post">
+<div class="container">
+<fieldset class="scheduler-border">
+ <legend class="scheduler-border">Cake Enquiry Form</legend>
+ <div class="form-margin">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" class="form-control" id="name" placeholder="Enter name" required>
+  </div>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+  </div>
+  <div class="form-group">
+    <label for="type">Type of cake:</label><br/>
+    <input type="checkbox" class="form-check-input" id="type"> Cupcakes<br/>
+	<input type="checkbox" class="form-check-input" id="type"> Cheesecakes<br/>
+    <input type="checkbox" class="form-check-input" id="type"> Butter cakes<br/>
+    <input type="checkbox" class="form-check-input" id="type"> Mudcakes<br/>
+  </div>
+  <div class="form-group">
+  <label for="type">Celebration type:</label>
+    <div class="radio">
+      <label for="Birthday"><input type="radio" name="celebrationtype" id="celebrationtype" value="Birthday" required> Birthday  </label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="celebrationtype" id="celebrationtype" value="Wedding" required> Wedding  </label>
+    </div>
+     <div class="radio">
+      <label> <input type="radio" name="celebrationtype" id="celebrationtype" value="Corporate" required> Corporate  </label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="celebrationtype" id="celebrationtype" value="Other" required> Other  </label>
+      <input type="text" class="form-control" id="otherval" name="otherval" placeholder="Enter other value">
+    </div>
+  </div>  
+  <div class="form-group">
+    <label for="exampleTextarea">Tell us about your dream cake:</label>
+    <textarea class="form-control" id="about" rows="3"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary" onclick="return checkCelebrationType()">Send away</button>&nbsp;&nbsp;
+  <a href="#">Restart</a>
+ </div> 
+ </fieldset>
+ </div>
+</form>
+<body>
+</body>
+</html>
